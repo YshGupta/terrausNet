@@ -4,6 +4,16 @@ from googleapiclient.discovery import build
 import io
 from googleapiclient.http import MediaIoBaseDownload
 
+from dotenv import load_dotenv
+import os
+
+# Load environment variables from .env
+load_dotenv()
+
+# Retrieve the values
+client_id = os.getenv('CLIENT_ID')
+client_secret = os.getenv('CLIENT_SECRET')
+
 import argparse
 import os
 import io
@@ -38,8 +48,8 @@ def download_file_from_drive(drive_service, file_id, file_name):
         status, done = downloader.next_chunk()
         print(f'Download {int(status.progress() * 100)}%.')
 
-client_id = '996393236200-nfnj0rdbajua8qfdpk5i2psm4el6us6u.apps.googleusercontent.com'
-client_secret = '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'
+# client_id = '996393236200-nfnj0rdbajua8qfdpk5i2psm4el6us6u.apps.googleusercontent.com'
+# client_secret = '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'
 
 # Authenticate with Google Drive API
 credentials = authenticate_with_drive(client_id, client_secret)
