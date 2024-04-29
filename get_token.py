@@ -10,8 +10,8 @@ def get_refresh_token(client_id, client_secret):
     flow.run_local_server(port=0)
     return flow.credentials.refresh_token
 
-client_id = '996393236200-nfnj0rdbajua8qfdpk5i2psm4el6us6u.apps.googleusercontent.com'
-client_secret = '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'
+client_id = '****'
+client_secret = '***'
 
 # Obtain refresh token
 refresh_token = get_refresh_token(client_id, client_secret)
